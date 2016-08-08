@@ -5,37 +5,37 @@ from itertools import izip
 
 def compare(args):
 
-	with open(args.prediction) as prediction, open(args.expected) as expected:
-		numItems = 0
-		numCorrectGuesses = 0
-		print 'Prediction : Expected'
-		for a, e in izip(prediction, expected):
-			numItems += 1
-			a = a.strip()
-			e = e.strip()
-			
-			expectedClass = e.split('\t')[1]
-			predictions = a.split('\t')[1].split(':')
-			classScores = []
+    with open(args.prediction) as prediction, open(args.expected) as expected:
+        numItems = 0
+        numCorrectGuesses = 0
+        print 'Prediction : Expected'
+        for a, e in izip(prediction, expected):
+            numItems += 1
+            a = a.strip()
+            e = e.strip()
+            
+            expectedClass = e.split('\t')[1]
+            predictions = a.split('\t')[1].split(':')
+            classScores = []
 
-			predictedClass = -1
-			maxScore = -1
-			for prediction in predictions:
-				if (not prediction.strip()):
-					continue
+            predictedClass = -1
+            maxScore = -1
+            for prediction in predictions:
+                if (not prediction.strip()):
+                    continue
 
-				parts = prediction.split(',')
-				if (parts[1] > maxScore):
-					maxScore = parts[1]
-					predictedClass = parts[0]
+                parts = prediction.split(',')
+                if (parts[1] > maxScore):
+                    maxScore = parts[1]
+                    predictedClass = parts[0]
 
 
-			print str(predictedClass) + '            ' + expectedClass
+            print str(predictedClass) + '            ' + expectedClass
 
-			if (predictedClass == str(expectedClass)):
-				numCorrectGuesses += 1
+            if (predictedClass == str(expectedClass)):
+                numCorrectGuesses += 1
 
-	print str(numCorrectGuesses) + ' correct guesses out of ' + str(numItems)
+    print str(numCorrectGuesses) + ' correct guesses out of ' + str(numItems)
 
 
 def validateArgs(args):

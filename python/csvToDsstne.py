@@ -17,7 +17,7 @@ def convert(args):
     idNdx = -1
 
     if (args.id != ''):
-		idNdx = headers.index(args.id)    	
+        idNdx = headers.index(args.id)        
 
     # Input values for training
     inputNc = open(args.name + 'input.dsstne', 'w')
@@ -29,14 +29,14 @@ def convert(args):
 
     ndx = 0
     for line in csvFile:
-    	if (not line.strip()):
-    		continue
+        if (not line.strip()):
+            continue
 
         columes = map(str.strip, line.split(args.d))
 
         curId = str(ndx)
         if (idNdx != -1):
-        	curId = columes[idNdx]
+            curId = columes[idNdx]
 
         columeNdx = 0
         inputLine = curId + '\t'
@@ -45,14 +45,14 @@ def convert(args):
             if (columeNdx != labelNdx):
                 inputLine += str(columeNdx) + ',' + str(colume) + ':'
             else:
-            	if (isInt(headers[columeNdx])):
-            		outputLine += str(colume)
-            	else:
-            		if colume in classes:
-            			outputLine += str(classes[colume])
-            		else:
-            			classes[colume] = len(classes)
-            			outputLine += str(classes[colume])
+                if (isInt(headers[columeNdx])):
+                    outputLine += str(colume)
+                else:
+                    if colume in classes:
+                        outputLine += str(classes[colume])
+                    else:
+                        classes[colume] = len(classes)
+                        outputLine += str(classes[colume])
                 
             columeNdx += 1
 
@@ -75,11 +75,11 @@ def convert(args):
     csvFile.close()
 
 def isInt(s):
-	try:
-		int(s)
-		return True
-	except ValueError:
-		return False
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False
 
 def randomSplit(splitRatio, numValues):
     trainPercent = splitRatio[0]
