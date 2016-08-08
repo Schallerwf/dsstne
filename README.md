@@ -1,2 +1,2 @@
 # dsstne
-Personal scripts/tools for working with dsstne.
+Personal scripts/tools/attempts for working with dsstne.
