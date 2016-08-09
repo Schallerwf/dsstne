@@ -1,5 +1,5 @@
 # My Attempt of a Classification Netwrok using DSSTNE
-### WORK IN PROGRESS - NOT CURRENTLY WORKING CORRECTLY
+### WORK IN PROGRESS - This does NOT work. I think the issue is the generateNetCDF script provided by the DSSTNE team doesn't use the values of the features, only the fact that the feature is present. However when I try to generate a netCDF manually the train command seg faults. 
 
 ## Getting the Data
 A nice and simple example of a multiclass classification problem is the the iris dataset. The iris dataset is a csv with 5 columns.
