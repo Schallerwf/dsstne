@@ -62,13 +62,13 @@ Save the following as **config_iris.json**
 Generate input for training.
 
 ```bash
-generateNetCDF -d gl_input -i input.dsstne -o gl_input.nc -f features_input -s samples_input -c
+generateNetCDF -d gl_input -i input.dsstne -o gl_input.nc -f features_input -s samples_input -c -t analog
 ```
 
 Generate output for training.
 
 ```bash
-generateNetCDF -d gl_output -i output.dsstne -o gl_output.nc -f features_output -s samples_input -c
+generateNetCDF -d gl_output -i output.dsstne -o gl_output.nc -f features_output -s samples_input -c -t analog
 ```
 
 ### You can use the following command to view the .nc files dsstne generates if you are curious as to what it looks like.
