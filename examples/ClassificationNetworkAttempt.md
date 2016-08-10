@@ -1,4 +1,4 @@
-# My Attempt of a Classification Netwrok using DSSTNE
+# My Attempt of a Classification Network using DSSTNE
 ### WORK IN PROGRESS
 
 ## Getting the Data
@@ -40,7 +40,7 @@ Save the following as **config_iris.json**
 
 ```bash
 {
-	"Version": 0.7,
+    "Version": 0.7,
     "Name" : "Iris",
     "Kind" : "FeedForward",
 
