@@ -32,29 +32,29 @@ def convert(args):
         if (not line.strip()):
             continue
 
-        columes = map(str.strip, line.split(args.d))
+        columns = map(str.strip, line.split(args.d))
 
         curId = str(ndx)
         if (idNdx != -1):
-            curId = columes[idNdx]
+            curId = columns[idNdx]
 
-        columeNdx = 0
+        columnNdx = 0
         inputLine = curId + '\t'
         outputLine = curId + '\t'
-        for colume in columes:
-            if (columeNdx != labelNdx):
-                inputLine += str(columeNdx) + ',' + str(colume) + ':'
+        for column in columns:
+            if (columnNdx != labelNdx):
+                inputLine += str(columnNdx) + ',' + str(column) + ':'
             else:
-                if (isInt(headers[columeNdx])):
-                    outputLine += str(colume)
+                if (isInt(headers[columnNdx])):
+                    outputLine += str(column)
                 else:
-                    if colume in classes:
-                        outputLine += str(classes[colume])
+                    if column in classes:
+                        outputLine += str(classes[column])
                     else:
-                        classes[colume] = len(classes)
-                        outputLine += str(classes[colume])
+                        classes[column] = len(classes)
+                        outputLine += str(classes[column])
                 
-            columeNdx += 1
+            columnNdx += 1
 
         inputLine = inputLine[:-1] #remove last : from line
 
@@ -120,9 +120,9 @@ def main(argv):
   
       parser.add_argument('csv', help='CSV to convert.')
       parser.add_argument('--header', default='', help='File containing csv header. Will use first line of CSV if not provided.')
-      parser.add_argument('--label', required=True, help='Label for colume being used as truth value.')
+      parser.add_argument('--label', required=True, help='Label for column being used as truth value.')
       parser.add_argument('--name', default='', help='Name to add to beginning of the 4 files generated. Optional.')
-      parser.add_argument('--id', default='', help='CSV colume to use as id for value. Default ids count from 0 up.')
+      parser.add_argument('--id', default='', help='CSV column to use as id for value. Default ids count from 0 up.')
       parser.add_argument('-d', default=',', help='Demilimeter for csv. Defaults to \',\'.')    
       parser.add_argument('-s', default='80/20', help='Train to split ratio. Defaults to 80/20.')
   

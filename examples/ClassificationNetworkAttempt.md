@@ -16,7 +16,7 @@ Grab the dataset.
 wget https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data
 ```
 
-Add colume headers by inserting a line into the beginning of the file.
+Add column headers by inserting a line into the beginning of the file.
 
 ```bash
 sed -i '1s/^/sepalLength,sepalWidth,petalLength,petalWidth,class\n/' iris.data
