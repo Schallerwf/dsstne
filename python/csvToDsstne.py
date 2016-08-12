@@ -45,7 +45,7 @@ def convert(args):
             if (columnNdx != labelNdx):
                 inputLine += str(columnNdx) + ',' + str(column) + ':'
             else:
-                if (isInt(headers[columnNdx])):
+                if (isInt(column)):
                     outputLine += str(column)
                 else:
                     if column in classes:
